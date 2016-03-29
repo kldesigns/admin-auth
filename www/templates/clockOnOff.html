@@ -1,0 +1,63 @@
+<ion-view title="Clock On/Off">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+             <label class="item item-select">
+                <span class="input-label">Select User</span>
+                <select ng-model="bundyopts.userid" ng-change="handleUserIDChange()">
+                    <option enabled="false" default>Please select</option>
+                    <option ng-repeat="user in userList" value="{{user._id}}">{{user.name}}</option>
+                </select>
+            </label>
+                
+        <div ng-show="userselected == 'yes'">
+        <div ng-show="bundyState == 'off'">
+            <p>User is currently clocked
+                <strong>{{bundyState}}</strong>
+            </p>
+        <p><span>{{message.time | amDateFormat:'dddd, MMMM Do YYYY, h:mm:ss a'}}</span></p>
+        <form class="list">
+            <label class="item item-select">
+                <span class="input-label">Select Job</span>
+                <select ng-model="bundyopts.selectedJob">
+                    <option enabled="false" default>Please select</option>
+                    <option ng-repeat="job in jobList" value={{job.number}}>{{job.client}} , {{job.number}}</option>
+                </select>
+            </label>
+        <form class="form-horizontal">    
+        <div class="form-group">
+        <label class="col-sm-2 control-label">Start Date and Time</label>
+        <div class="col-sm-10">
+            <p class="input-group">
+                <input type="text" class="form-control" datetime-picker="dd/MM/yyyy HH:mm" ng-model="bundyopts.dateon" is-open="datePickerOpen" when-Closed="datePickerClosed()" />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openDatePicker($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+            </p>
+            </div>
+        </div>
+        </form>
+        <button class="button button-stable button-block  icon-left ion-android-stopwatch" ng-click='bundy(bundyopts)'>Clock On</button>
+        </form>
+        </div>
+        <div ng-show="bundyState == 'on'">
+            <p>User is currently clocked
+                <strong>{{bundyState}}</strong> to job {{bundyJob}}</p>
+        <form class="list">
+            <form class="form-horizontal">    
+        <div class="form-group">
+        <label class="col-sm-2 control-label">Finish Date and Time</label>
+        <div class="col-sm-10">
+            <p class="input-group">
+                <input type="text" class="form-control" datetime-picker="dd/MM/yyyy HH:mm" ng-model="bundyopts.dateoff" is-open="datePickerOpen" when-Closed="datePickerClosed()" />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openDatePicker($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+            </p>
+            </div>
+        </div>
+        </form>
+            <button class="button button-stable button-block  icon-left ion-android-stopwatch" ng-click='bundy(bundyopts)'>Clock Off</button>
+        </form>
+        </div>
+        </div>
+        </ion-content>
+</ion-view>
