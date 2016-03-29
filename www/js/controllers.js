@@ -734,7 +734,7 @@ $scope.handleUserIDChange = function() {
             });
         }
     }
-
+ 
     function _createModeKeyUp(args, item) {
         // if key is enter
         if (args.keyCode == 13) {
