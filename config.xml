@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.auth-test" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0" versionCode =   "1">
-  <name>Tiemsheets Admin</name>
+  <name>Timesheets Admin</name>
   <description>
         Kiwilime Designs Timesheets and Travel Log Admin Section
     </description>
