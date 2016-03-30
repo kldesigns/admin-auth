@@ -82,16 +82,25 @@ angular.module('app.routes', [])
       }
     })
     
-    .state('tabsController.changePassword', {
-      url: '/ch_pword',
+    .state('tabsController.users', {
+      url: '/users',
       views: {
         'tab2': {
-          templateUrl: 'templates/changePassword.html',
-          controller: 'changePasswordCtrl'
+          templateUrl: 'templates/users.html',
+          controller: 'usersCtrl'
         }
       }
     })
-        
+
+  .state('tabsController.userlisting', {
+      url: '/userlisting',
+      views: {
+        'tab2': {
+          templateUrl: 'templates/userlisting.html',
+          controller: 'userlistingCtrl as itemsCtrl'
+        }
+      }
+    })  
  
         
     .state('tabsController.reviewAndSubmit', {

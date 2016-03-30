@@ -1,0 +1,38 @@
+<ion-view title="User List">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+    <div>
+            
+    <div crud-grid
+         column-button-click='itemsCtrl.gridOnButtonClick'
+         initialized='itemsCtrl.gridOnInitialized'
+         server-url='{{itemsCtrl.serverUrl}}'
+         columns-definition='[
+         {
+            "binding"       :"_id",
+            "type"          :"text",
+            "required"      :"false",
+            "hidden"        :"true"
+         },
+         {
+            "binding"       :"name",
+            "header"        :"User Name",
+            "type"          :"text",
+            "required"      :"true"
+         },
+         {
+            "binding"       :"email",
+            "header"        :"email",
+            "type"          :"text",
+            "required"      :"true"
+         },
+         {
+            "binding"       :"admin",
+            "header"        :"Admin",
+            "type"          :"text",
+            "required"      :"false"
+         }
+         ]'>
+    </div>
+</div>
+ </ion-content>
+</ion-view>
